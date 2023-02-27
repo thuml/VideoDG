@@ -57,7 +57,6 @@ def train(train_loader, model, criterion, optimizer, epoch, log, writer):
             adv_input = torch.autograd.Variable(adv_input, requires_grad=True)
             # print(adv_input.requires_grad)
             adv_input_block = input.clone()
-            adv_input_block_1 = input.clone()
             adv_input_block = torch.autograd.Variable(adv_input_block, requires_grad=True)
             max_optimizer = torch.optim.SGD([{'params': adv_input}], 1.0)
             max_optimizer_1 = torch.optim.SGD([{'params': adv_input_block}], 1.0)
